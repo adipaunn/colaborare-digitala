@@ -1,0 +1,29 @@
+<!-- Plan: Pagina adună două numere introduse și afișează suma.
+Când utilizatorul apasă butonul sau modifică valorile, se recalculează. -->
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adunare Numere</title>
+    <script>
+        function calculeazaSuma() {
+            const numar1 = parseFloat(document.getElementById('numar1').value) || 0;
+            const numar2 = parseFloat(document.getElementById('numar2').value) || 0;
+            const suma = numar1 + numar2;
+            document.getElementById('suma').textContent = 'Suma: ' + suma;
+        }
+    </script>
+</head>
+<body>
+    <h1>Adunare Numere</h1>
+    <label for="numar1">Număr 1:</label>
+    <input type="number" id="numar1" value="0" oninput="calculeazaSuma()">
+    <br>
+    <label for="numar2">Număr 2:</label>
+    <input type="number" id="numar2" value="0" oninput="calculeazaSuma()">
+    <br>
+    <button onclick="calculeazaSuma()">Calculează Suma</button>
+    <h2 id="suma">Suma: 0</h2>
+</body>
+</html>
